@@ -128,3 +128,4 @@ class AppointmentController extends Controller
         return response()->json(['message' => 'Appointment created successfully.'], 201);
     }
 }
+
