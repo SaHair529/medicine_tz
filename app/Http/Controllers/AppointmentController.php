@@ -86,8 +86,8 @@ class AppointmentController extends Controller
     public function store(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
-            'doctor_id' => 'required|exists:doctors,id',
-            'patient_id' => 'required|exists:patients,id',
+            'doctor_id' => 'required|numeric|exists:doctors,id',
+            'patient_id' => 'required|numeric|exists:patients,id',
             'appointment_date' => 'required|date_format:Y-m-d',
             'appointment_time' => 'required|date_format:H:i'
         ]);
